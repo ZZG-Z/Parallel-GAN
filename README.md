@@ -24,8 +24,8 @@ conda activate pytorch170cu10
 ## Pre-trained models
 |Model Name|Dataset(s)|PSNR Rel.|SSIM Rel.|SAM|FID|
 |----------|----------|--------|-------|----|-------|
-|Reconstruction network G_R [Baidu](https://pan.baidu.com/s/10udDJaswX44SXg11a-Vn8Q?pwd=1234)/[Google](https://drive.google.com/file/d/1wpOj39KGgKGHpG_Z_MRGAUgyxF__3sVz/view?usp=sharing)|K|29.9690|0.7043|1.2850|70.8376|
-|Translation network G_T [Baidu](https://pan.baidu.com/s/1Flie7J8K04oWeu0k8zCpqw?pwd=1234)/[Google](https://drive.google.com/file/d/1RxCJ6lz6MpeHIPLNFmm1hJikeDUOBXu8/view?usp=sharing)|K|22.4651|0.3871|2.7256|102.1934|
+|Reconstruction network G_R [Baidu](https://pan.baidu.com/s/10udDJaswX44SXg11a-Vn8Q?pwd=1234)/[Google](https://drive.google.com/file/d/13nKYFD2o7tyoV_K92hrMb11x0HayI4mD/view?usp=share_link)|MSAW|29.9690|0.7043|1.2850|70.8376|
+|Translation network G_T [Baidu](https://pan.baidu.com/s/1Flie7J8K04oWeu0k8zCpqw?pwd=1234)/[Google](https://drive.google.com/file/d/1PcGqallpb8VOw3cXhUqNXg1WjAaB3QUl/view?usp=share_link)|MSAW|22.4651|0.3871|2.7256|102.1934|
 
 * **code for all the download links of Baidu is `1234`**
 ## Quickly Start
