@@ -29,7 +29,7 @@ conda activate pytorch170cu10
 
 * **code for all the download links of Baidu is `1234`**
 ## Quickly Start
-To predict optical image from the corresponding images, please firstly download the pretrained model from the column named `Model Name` in the above table. Some test image from SpaceNet Dataset has been put in the dir "./dataset/SpaceNet/". After download the translation or reconstruction model into the dir:"./checkpoints/name/latest_net_G_trans.pth" or "./checkpoints/name/latest_net_G_recon.pth", you can test the models by:
+To predict optical image from the corresponding images, please firstly download the pretrained model from the column named `Model Name` in the above table. Some test image from SpaceNet Dataset(MSAW dataset) has been put in the dir "./dataset/SpaceNet/". After download the translation or reconstruction model into the dir:"./checkpoints/name/latest_net_G_trans.pth" or "./checkpoints/name/latest_net_G_recon.pth", you can test the models by:
 ```
 CUDA_VISIBLE_DEVICES=0 python\
  test.py\
@@ -37,6 +37,11 @@ CUDA_VISIBLE_DEVICES=0 python\
  --net translation <which net you want to test(reconstruction or translation)>\
  ```
 ## Data preparation
+MSAW Dataset can be download by
+```
+aws s3 ls s3://spacenet-dataset/spacenet/SN6_buildings/
+```
+And the QXS-SAROPT and SEN1-2 Dataset can be downloaded by the link1(https://github.com/yaoxu008/QXS-SAROPT) and link2(https://mediatum.ub.tum.de/1436631)
 #### Set Data Path
 Please change the "--dataroot" of the base_options.py to your dataset path. 
 the folder for each dataset should be organized like(A for optical image, B for SAR image):
@@ -59,6 +64,8 @@ the folder for each dataset should be organized like(A for optical image, B for 
 |   |---2_B.tif
 |   |---...
 ```
+
+for different dataset, you should set different "--input_nc". For MSAW Dataset with 4 channels SAR image:"--input_nc 4", for other datasets with 3 channels:"--input_nc 3".
 ## Training and Testing
 You could use the following commands for training the Parallal-GAN on SpaceNet. As mentioned in our paper, we trained the reconstruction network and translation network respectively. The training is devideded into two stages:
 ```
