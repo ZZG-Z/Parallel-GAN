@@ -36,7 +36,14 @@ python test.py\
  --dataroot ./datasets/SpaceNet/\
  --name <name of the experiment. It decides where to store samples and models. And the path of download models should be like:"./checkpoints/name/model.pth">
 ```
-
+## Quickly Start
+Some test image from SpaceNet Dataset has been put in the dir "./dataset/SpaceNet/". After download the translation or reconstruction model into the dir:"./checkpoints/name/latest_net_G_trans.pth" or "./checkpoints/name/latest_net_G_recon.pth", you can test the models by:
+```
+CUDA_VISIBLE_DEVICES=0 python\
+ test.py\
+ --name trans\
+ --net translation
+ ```
 ## Data preparation
 #### Set Data Path
 Please change the "--dataroot" of the base_options.py to your dataset path. 
@@ -68,7 +75,7 @@ CUDA_VISIBLE_DEVICES=0 python\
  train.py\
  --name recon\
  --net reconstruction
- and test the reconstruction network:
+# and test the reconstruction network:
  CUDA_VISIBLE_DEVICES=0 python\
  test.py\
  --name recon\
@@ -81,7 +88,7 @@ CUDA_VISIBLE_DEVICES=0 python\
  train.py\
  --name trans\
  --net translation
- and test the translation network:
+# and test the translation network:
  CUDA_VISIBLE_DEVICES=0 python\
  train.py\
  --name trans\
