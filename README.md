@@ -41,7 +41,7 @@ MSAW Dataset can be download by
 ```
 aws s3 ls s3://spacenet-dataset/spacenet/SN6_buildings/
 ```
-And the QXS-SAROPT and SEN1-2 Dataset can be downloaded by the link1(https://github.com/yaoxu008/QXS-SAROPT) and link2(https://mediatum.ub.tum.de/1436631)
+And the QXS-SAROPT and SEN1-2 Dataset can be downloaded by the [link1](https://github.com/yaoxu008/QXS-SAROPT) and [link2](https://mediatum.ub.tum.de/1436631)
 #### Set Data Path
 Please change the "--dataroot" of the base_options.py to your dataset path. 
 the folder for each dataset should be organized like(A for optical image, B for SAR image):
