@@ -60,7 +60,7 @@ the folder for each dataset should be organized like(A for optical image, B for 
 |   |---2_B.tif
 |   |---...
 ```
-## Training
+## Training and Testing
 You could use the following commands for training the Parallal-GAN on SpaceNet. As mentioned in our paper, we trained the reconstruction network and translation network respectively. The training is devideded into two stages:
 ```
 # train reconstruction network at stage1
@@ -68,11 +68,21 @@ CUDA_VISIBLE_DEVICES=0 python\
  train.py\
  --name recon\
  --net reconstruction
+ and test the reconstruction network:
+ CUDA_VISIBLE_DEVICES=0 python\
+ test.py\
+ --name recon\
+ --net reconstruction
 ```
 After finishing the stage1, please copy the path to the last saved model `./checkpoints/name/latest_net_G_recon.pth` into `load_path` of parallel_gan_model.py, and use the following command to continue the training:
 ```
-# train SDFA-Net at stage2
+# train translation network at stage2
 CUDA_VISIBLE_DEVICES=0 python\
+ train.py\
+ --name trans\
+ --net translation
+ and test the translation network:
+ CUDA_VISIBLE_DEVICES=0 python\
  train.py\
  --name trans\
  --net translation
