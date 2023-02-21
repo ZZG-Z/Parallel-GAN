@@ -28,21 +28,13 @@ conda activate pytorch170cu10
 |Translation network G_T [Baidu](https://pan.baidu.com/s/1Flie7J8K04oWeu0k8zCpqw?pwd=1234)/[Google](https://drive.google.com/file/d/1RxCJ6lz6MpeHIPLNFmm1hJikeDUOBXu8/view?usp=sharing)|K|22.4651|0.3871|2.7256|102.1934|
 
 * **code for all the download links of Baidu is `1234`**
-## Prediction
-To predict optical image from the corresponding images, please firstly download the pretrained model from the column named `Model Name` in the above table. After unzipping the downloaded model, you could predict the optical image by
-```
-python test.py\
- --net <which net you want to test(reconstruction or translation)>\
- --dataroot ./datasets/SpaceNet/\
- --name <name of the experiment. It decides where to store samples and models. And the path of download models should be like:"./checkpoints/name/model.pth">
-```
 ## Quickly Start
-Some test image from SpaceNet Dataset has been put in the dir "./dataset/SpaceNet/". After download the translation or reconstruction model into the dir:"./checkpoints/name/latest_net_G_trans.pth" or "./checkpoints/name/latest_net_G_recon.pth", you can test the models by:
+To predict optical image from the corresponding images, please firstly download the pretrained model from the column named `Model Name` in the above table. Some test image from SpaceNet Dataset has been put in the dir "./dataset/SpaceNet/". After download the translation or reconstruction model into the dir:"./checkpoints/name/latest_net_G_trans.pth" or "./checkpoints/name/latest_net_G_recon.pth", you can test the models by:
 ```
 CUDA_VISIBLE_DEVICES=0 python\
  test.py\
- --name trans\
- --net translation
+ --name trans <name of the experiment. It decides where to store samples and models. And the path of download models should be like:"./checkpoints/name/model.pth">\
+ --net translation <which net you want to test(reconstruction or translation)>\
  ```
 ## Data preparation
 #### Set Data Path
