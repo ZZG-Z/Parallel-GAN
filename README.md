@@ -18,7 +18,7 @@ Citation information:
 We built and ran the repo with CUDA 10.2, Python 3.7.6, and Pytorch 1.4.0. For using this repo, we recommend creating a virtual environment by [Anaconda](https://www.anaconda.com/products/individual). Please open a terminal in the root of the repo folder for running the following commands and scripts.
 ```
 conda env create -f environment.yml
-conda activate pytorch170cu10
+conda activate ph
 ```
 
 ## Pre-trained models
