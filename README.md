@@ -29,11 +29,11 @@ conda activate pytorch170cu10
 
 * **code for all the download links of Baidu is `1234`**
 ## Quickly Start
-To predict optical image from the corresponding images, please firstly download the pretrained model from the column named `Model Name` in the above table. Some test image from SpaceNet Dataset(MSAW dataset) has been put in the dir "./dataset/SpaceNet/". After download the translation or reconstruction model into the dir:"./checkpoints/name/latest_net_G_trans.pth" or "./checkpoints/name/latest_net_G_recon.pth", you can test the models by:
+To predict optical image from the corresponding images, please firstly download the pretrained model from the column named `Model Name` in the above table. Some test image from SpaceNet Dataset(MSAW dataset) has been put in the dir "./dataset/SpaceNet/". After download the translation or reconstruction model into the dir:"./checkpoints/trans/latest_net_G_trans.pth" or "./checkpoints/recon/latest_net_G_recon.pth", you can test the models by:
 ```
 CUDA_VISIBLE_DEVICES=0 python\
  test.py\
- --name trans <name of the experiment. It decides where to store samples and models. And the path of download models should be like:"./checkpoints/name/model.pth">\
+ --name trans <name of the experiment. It decides where to store samples and models\
  --net translation <which net you want to test(reconstruction or translation)>\
  ```
 ## Data preparation
