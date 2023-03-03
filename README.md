@@ -65,7 +65,7 @@ the folder for each dataset should be organized like(A for optical image, B for 
 |   |---...
 ```
 
-for different dataset, you should set different "--input_nc". For MSAW Dataset with 4 channels SAR image:"--input_nc 4", for other datasets with 3 channels:"--input_nc 3".
+for different dataset, you should set different "--input_nc". For MSAW Dataset with 4 channels SAR image:"--input_nc 4", for other datasets with 3 channels:"--input_nc 3". And in the "data/aligned_datasets.py" the method load the SAR image should changed according to the SAR channel.
 ## Training and Testing
 You could use the following commands for training the Parallal-GAN on SpaceNet. As mentioned in our paper, we trained the reconstruction network and translation network respectively. The training is devideded into two stages:
 ```
