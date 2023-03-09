@@ -45,10 +45,13 @@ class AlignedDataset(BaseDataset):
         B_path = self.B_paths[index]
 
         A_img = cv.imread(A_path).transpose(2, 0, 1) / 255.0  # optical
-        B_img = cv.imread(B_path, cv.IMREAD_LOAD_GDAL).transpose(2, 0, 1)/100  # SAR, using for spacenet with 4-channel SAR
-        # B_img = cv.imread(B_path).transpose(2, 0, 1)/255.0 # SAR, using for dataset with 1/3-channel SAR
 
-        A_img, B_img = self.center_crop(A_img, B_img, 512)  # for spacenet dataset
+        if self.inchannel == 4:
+            B_img = cv.imread(B_path, cv.IMREAD_LOAD_GDAL).transpose(2, 0, 1)/100  # SAR, using for spacenet with 4-channel SAR
+            A_img, B_img = self.center_crop(A_img, B_img, 512)  # for spacenet dataset
+        else:
+            B_img = cv.imread(B_path).transpose(2, 0, 1)/255.0 # SAR, using for dataset with 1/3-channel SAR
+            
         A = torch.from_numpy(A_img.astype(np.float32))
         B = torch.from_numpy(B_img.astype(np.float32))
         return {'A': A, 'B': B, 'A_paths': A_path, 'B_paths': B_path}
