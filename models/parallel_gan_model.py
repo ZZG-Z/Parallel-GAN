@@ -76,8 +76,8 @@ class ParallelGANModel(BaseModel):
             if opt.net == 'translation':
                 self.optimizer_G = torch.optim.Adam(self.netG.parameters(), lr=opt.lr, betas=(opt.beta1, 0.999))
             elif opt.net == 'reconstruction':
-                self.optimizer_G = torch.optim.Adam([{'params':self.netG.decoder.parameters()}, 
-                                                     {'params': self.netresnext.module.encoder.parameters(), 'lr': opt.lr / 10}],  ]lr=opt.lr, betas=(opt.beta1, 0.999))
+                self.optimizer_G = torch.optim.Adam([{'params':self.netG.module.decoder.parameters()}, 
+                                                     {'params': self.netG.module.encoder.parameters(), 'lr': opt.lr / 10}],lr=opt.lr, betas=(opt.beta1, 0.999))
             self.optimizer_D = torch.optim.Adam(self.netD.parameters(), lr=opt.lr, betas=(opt.beta1, 0.999))
             self.optimizers.append(self.optimizer_G)
             self.optimizers.append(self.optimizer_D)
