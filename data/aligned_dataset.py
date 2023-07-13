@@ -46,7 +46,7 @@ class AlignedDataset(BaseDataset):
 
         A_img = cv.imread(A_path).transpose(2, 0, 1) / 255.0  # optical
 
-        if self.inchannel == 4:
+        if self.input_nc == 4:
             B_img = cv.imread(B_path, cv.IMREAD_LOAD_GDAL).transpose(2, 0, 1)/100  # SAR, using for spacenet with 4-channel SAR
             A_img, B_img = self.center_crop(A_img, B_img, 512)  # for spacenet dataset
         else:
